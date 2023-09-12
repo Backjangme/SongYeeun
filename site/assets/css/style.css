@@ -1,0 +1,43 @@
+/* header */
+#wrap {
+    background-image: url(../img/workplace-2303851_1280\ 2.jpg);
+}
+#header {
+    margin: 0 auto;
+    width: 1440px;
+    height: 1024px;
+    position: relative;
+}
+.header_menu {
+    
+}
+.header_forder {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+}
+.header_chat {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    position: absolute;
+    left: 30px;
+    top: 160px;
+}
+.header_internet {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    position: absolute;
+    left: 30px;
+    top: 290px;
+}
+
+/* main */
+
+/* contents */
+
+/* footer */
