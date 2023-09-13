@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- META -->
+    <meta name="description" content="슬라이드 형식을 활용한 간단한 게임입니다." />
+    <meta name="keywords" content="게임, 호감도, 미연시, 슬라이드, 선택지, 컴퓨터, 코딩, html, javascript" />
+    <meta name="author" content="Backjangme" />
+    <meta name="robots" content="all" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: pink;
+        }
+        #wrap{
+            width: 880px;
+            height: 540px;
+            background-color: #F99A9A;
+            border: 4px solid #fff;
+            box-sizing: border-box;
+            margin: 0 auto;
+            position: relative;
+        }
+        #header{
+            width: 100%;
+            height: 60px;
+            background-color: #F9CACA;
+            box-sizing: border-box;
+            border-bottom: 4px solid #fff;
+            position: relative;
+        }
+        .header_square01 {
+            width: 35px;
+            height: 35px;
+            background-color: #fff;
+            position: absolute;
+            right: 8px;
+            top: 8px;
+        }
+        .header_square02 {
+            width: 35px;
+            height: 35px;
+            background-color: #fff;
+            position: absolute;
+            right: 51px;
+            top: 8px;
+        }
+        .header_square03 {
+            width: 35px;
+            height: 35px;
+            background-color: #fff;
+            position: absolute;
+            right: 94px;
+            top: 8px;
+        }
+        .header_square01:hover,
+        .header_square02:hover,
+        .header_square03:hover {
+            background-color: #F99A9A;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        #main {
+            display: flex;
+        }
+        .choice {
+            width: 96%;
+            height: 472px;
+            flex-wrap: wrap;
+            display: grid;
+            grid-template-areas: 
+                "chat1 chat1"
+                "chat1 chat1"
+                "choice1 choice2"
+            ;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 33.3333% 33.3333% 33.3333%;
+            position: absolute;
+        }
+        .main_talk {
+            background-color: #F99A9A;
+            grid-area: chat1;
+        }
+        .talk_box01 {
+            width: 50%;
+            height: 6vh;
+            background-color: #fff;
+            position: absolute;
+            border-radius: 30px 30px 30px 0;
+            left: 30px;
+            top: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: top 1s ease, opacity 0.3s ease;
+            opacity: 1; 
+        }
+        .choice01 {
+            background-color: #ffffff;
+            grid-area: choice1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .choice02 {
+            background-color: #ffffff;
+            grid-area: choice2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .choice01:hover,
+        .choice02:hover {
+            background-color: #F99A9A;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        #aside{
+            width: 6%;
+            position: absolute;
+            right: 0;
+        }
+        .side_bar {
+            width: 100%;
+            height: 472px;
+            background-color: #fff;
+            position: relative;
+        }
+        .side_up {
+            width: 80% ;
+            height: 5%;
+            position: absolute;
+            right: 3px;
+            top: 1px;
+            background-color: #F9CACA;
+        }
+        .side_down {
+            width: 80% ;
+            height: 5%;
+            position: absolute;
+            right: 3px;
+            bottom: 1px;
+            background-color: #F9CACA;
+        }
+        .side_up:hover,
+        .side_down:hover {
+            background-color: #F99A9A;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .side_scroll {}
+        @media(max-width: 920px){
+            #wrap {
+                width: 95%;
+            }
+        }
+        @media(max-width: 600px){
+            #wrap {
+                width: 98%;
+                height: 100vh;
+                border: 0;
+            }
+            .side_bar {
+                height: 100vh;
+            }
+            .choice {
+                height: 100vh;
+                flex-wrap: wrap;
+                display: grid;
+                grid-template-areas: 
+                    "chat1 chat1"
+                    "chat1 chat1"
+                    "choice1 choice1"
+                    "choice2 choice2"
+                ;
+                grid-template-columns: 50% 50%;
+                grid-template-rows: 35% 35% 15% 15%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="header_square01"><a href=""></a></div>
+            <div class="header_square02"><a href=""></a></div>
+            <div class="header_square03"><a href=""></a></div>
+        </header>
+        <main id="main">
+            <div class="choice">
+                <div class="main_talk">
+                    <div class="talk_box01"></div>
+                    <div class="talk_box02"></div>
+                    <div class="talk_box03"></div>
+                </div>
+                <div class="choice01"></div>
+                <div class="choice02"></div>
+            </div>
+            <aside id="aside">
+                <div class="side_bar">
+                    <div class="side_up"></div>
+                    <div class="side_down"></div>
+                    <div class="side_scroll"></div>
+                </div>
+            </aside>
+        </main>
+        
+    </div>
+    <script>
+        const talkBox = document.querySelector('.talk_box01');
+        const talkChoice01 = document.querySelector('.choice01');
+        const talkChoice02 = document.querySelector('.choice02');
+
+        const chatInfo = [
+            {
+                chatText: "안녕?"
+            }
+        ]
+
+        const chatSelect = [
+            {
+                select: [
+                    "나는 그게 정답이라고 생각한다.",
+                    "너는 틀렸다."
+                ]
+            }
+        ]
+
+        talkChoice01.innerHTML = chatSelect[0].select[0];
+        talkChoice02.innerHTML = chatSelect[0].select[1];
+        talkBox.innerHTML = chatInfo[0].chatText;
+
+        talkChoice01.addEventListener("click", () => {
+            alert("선택지를 잘못 골랐습니다.");
+            talkBox.style.top = "-200px"; // 위로 200px 이동
+            talkBox.style.opacity = "0";
+        });
+
+        talkChoice02.addEventListener("click", () => {
+            alert("선택지를 잘 골랐습니다.");
+            talkBox.style.top = "-200px"; // 위로 200px 이동
+            talkBox.style.opacity = "0";
+        });
+
+    </script>
+</body>
+</html>
